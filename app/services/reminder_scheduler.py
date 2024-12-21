@@ -6,14 +6,11 @@ from typing import List
 import schedule
 
 from app.services.email_service import send_email
-from app.services.firestore_service import (
-    expire_old_reminders,
-    get_overdue_tasks,
-    get_reminders,
-    reschedule_recurring_reminders,
-    reschedule_recurring_tasks,
-    update_reminder,
-)
+from app.services.firestore_service import (expire_old_reminders,
+                                            get_overdue_tasks, get_reminders,
+                                            reschedule_recurring_reminders,
+                                            reschedule_recurring_tasks,
+                                            update_reminder)
 
 # Configure logging
 logging.basicConfig(

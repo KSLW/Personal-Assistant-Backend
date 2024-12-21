@@ -1,6 +1,14 @@
-fastapi
-uvicorn
-python-dotenv
-sqlalchemy
-pydantic
-firebase-admin
+fastapi==0.100.0          # Framework for building APIs
+uvicorn==0.22.0          # ASGI server for running FastAPI
+python-dotenv==1.0.0     # For loading environment variables
+sqlalchemy==2.0.20       # Optional, remove if unused in your project
+pydantic==2.3.0          # Data validation and settings management
+firebase-admin==6.1.0    # Firebase SDK for Python
+schedule==1.2.0          # For scheduling tasks
+mailersend==0.1.0        # MailerSend API for sending emails
+pytest==7.4.0            # For testing
+pytest-mock==3.11.0      # Mocking utilities for pytest
+flake8==6.1.0            # Linting
+black==23.7.0            # Code formatting
+isort==5.12.0            # Import sorting
+pre-commit==3.4.0        # Pre-commit hooks

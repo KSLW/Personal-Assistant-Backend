@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: mailersend
+Version: 0.1.0
+Summary: Python SDK for MailerSend
+Home-page: https://github.com/mailersend/mailersend-python
+License: MIT
+Author: Alex Orfanos
+Author-email: alexandros@mailerlite.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: requests (>=2.25.0,<3.0.0)
+Project-URL: Repository, https://github.com/mailersend/mailersend-python

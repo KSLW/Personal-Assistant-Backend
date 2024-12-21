@@ -1,7 +1,7 @@
 import logging
 import os
 from datetime import datetime, timedelta
-from typing import Dict, List, Union, Optional
+from typing import Dict, List, Optional, Union
 
 import firebase_admin
 from dotenv import load_dotenv
@@ -53,6 +53,7 @@ def get_user_data(user_id: str) -> Union[Dict, str]:
         logger.error(f"Failed to retrieve user data for {user_id}: {str(e)}")
         return "Error retrieving user data"
 
+
 # Pydantic Models
 
 
@@ -71,6 +72,7 @@ class TaskModel(BaseModel):
     recurring: Optional[bool] = False
     recurrence_interval: Optional[str] = None
 
+
 # Shared Functions
 
 
@@ -81,6 +83,7 @@ def update_collection(user_id: str, collection: str, updates: List[Dict]):
         logger.info(f"Updated {collection} for user: {user_id}")
     except Exception as e:
         logger.error(f"Failed to update {collection} for user {user_id}: {str(e)}")
+
 
 # Reminder Functions
 
@@ -102,7 +105,9 @@ def add_reminder(user_id: str, reminder: Union[Dict, ReminderModel]) -> Dict:
             user_ref.set({"reminders": []})
 
         # Use .model_dump() if the reminder is a Pydantic model; otherwise, leave it as is
-        reminder_data = reminder.model_dump() if isinstance(reminder, ReminderModel) else reminder
+        reminder_data = (
+            reminder.model_dump() if isinstance(reminder, ReminderModel) else reminder
+        )
         reminder_data.update(
             {
                 "id": db.collection("users").document().id,
@@ -172,6 +177,7 @@ def reschedule_recurring_reminders(user_id: str) -> Dict:
     except Exception as e:
         logger.error(f"Failed to reschedule reminders for user {user_id}: {str(e)}")
         return {"error": f"Failed to reschedule reminders: {str(e)}"}
+
 
 # Task Functions
 

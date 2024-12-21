@@ -1,5 +1,6 @@
-from pydantic import BaseModel, EmailStr
 from typing import Optional
+
+from pydantic import BaseModel, EmailStr
 
 # User Model
 
@@ -7,6 +8,7 @@ from typing import Optional
 class User(BaseModel):
     email: EmailStr
     password: str
+
 
 # Reminder Model
 
@@ -17,6 +19,7 @@ class Reminder(BaseModel):
     recurring: Optional[bool] = False
     recurrence_interval: Optional[str] = None  # Options: "daily", "weekly", "monthly"
     description: Optional[str] = None
+
 
 # Task Model
 
@@ -30,6 +33,7 @@ class Task(BaseModel):
     recurrence_interval: Optional[str] = None  # Options: "daily", "weekly", "monthly"
     description: Optional[str] = None
     status: Optional[str] = "Pending"  # Default status
+
 
 # Email Model
 
