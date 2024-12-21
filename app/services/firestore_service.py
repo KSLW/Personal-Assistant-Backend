@@ -136,7 +136,7 @@ def update_reminder(user_id: str, reminder_id: str, updates: Dict) -> Dict:
             f"Failed to update reminder {reminder_id} for user {user_id}: {str(e)}"
         )
         return {"error": f"Failed to update reminder: {str(e)}"}
-    
+
 
 def reschedule_recurring_reminders(user_id: str) -> Dict:
     try:
@@ -203,7 +203,7 @@ def add_task(user_id: str, task: TaskModel) -> Dict:
     except Exception as e:
         logger.error(f"Failed to add task for user {user_id}: {str(e)}")
         return {"error": f"Failed to add task: {str(e)}"}
-    
+
 
 def search_tasks(user_id: str, query: str) -> Union[List, Dict]:
     try:
