@@ -11,7 +11,8 @@ from app.services.firestore_service import (add_reminder, add_task,
 
 app = FastAPI(
     title="Personal Assistant Backend API",
-    description="API for managing reminders, tasks, and user authentication in the Personal Assistant app.",
+    description="""API for managing reminders, tasks, and user authentication in the Personal
+    Assistant app.""",
     version="1.0.0",
 )
 
