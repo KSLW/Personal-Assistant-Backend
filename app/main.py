@@ -6,8 +6,7 @@ from firebase_admin import auth
 from firebase_admin.auth import verify_id_token
 from pydantic import BaseModel
 
-from app.services.firestore_service import (add_reminder, add_task,
-                                            get_reminders, update_reminder)
+from app.services.firestore_service import add_reminder, add_task, get_reminders, update_reminder
 
 app = FastAPI(
     title="Personal Assistant Backend API",
